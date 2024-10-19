@@ -14,7 +14,6 @@ commuVerse is an interactive web app built using Streamlit that connects users t
 - [Usage](#usage)
 - [Community Structure](#community-structure)
 - [Future Improvements](#future-improvements)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -67,3 +66,34 @@ To run commuVerse locally, follow these steps:
    ```
 
 4. Please set your OPENAI_API_KEY
+
+### Usage
+
+Once the app is running:
+
+1. Navigate through different communities from the sidebar.
+2. Interact with the custom AI bots in each community to get tailored advice and content.
+3. Contribute by adding your own projects, sharing insights, or engaging with other users.
+
+### Community Structure
+
+commuVerse consists of various communities, each designed to cater to a specific interest. These include:
+
+1. Hobby Hub: Share your latest projects and hobbies.
+2. Study and Life Hacks: Boost your academic productivity with AI-driven tips.
+3. Mental Health and Wellness: Practice mindfulness and mental well-being.
+4. Meal Planner: Generate customized meal plans.
+5. Mindfulness and Meditation: Learn meditation techniques.
+6. Finance for Beginners: Manage personal finances and budgeting.
+7. Quick Beauty and Skincare: Get skincare tips and beauty routines.
+8. Event Finder for Youth: Discover local and virtual events.
+9. Fashion and Style Based on Mood: AI-driven fashion suggestions.
+
+### Future Improvements
+
+We plan to continuously improve commuVerse with the following features:
+
+1. Real-time Chat Integration: Allow users to chat with each other and AI bots in real-time.
+2. Gamification: Introduce challenges, achievements, and leaderboards to increase engagement.
+3. Mobile Optimization: Enhance the user experience for mobile users.
+4. Enhanced Personalization: Further fine-tune AI suggestions based on user behavior and preferences.
