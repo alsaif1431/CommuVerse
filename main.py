@@ -3,7 +3,7 @@ from services.html_css import card_css, tag_line_css
 from services.models import Community
 from services.footer import display_footer
 
-st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐")
+st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐" )
 st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
     divider=True,
