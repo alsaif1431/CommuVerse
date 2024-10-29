@@ -58,8 +58,33 @@ tag_line_css = """
             <h1 style="color: #1f77b4; font-size: 36px; font-weight: bold;">
                 Explore Vibrant Communities 🌐
             </h1>
-            <p style="color: #4a4a4a; font-size: 18px; margin-top: 10px;">
+            <p style= font-size: 18px; margin-top: 10px;">
                 Find your space, connect with others, and grow together in commuVerse!
             </p>
         </div>
         """
+        
+styles={
+        "card": {
+        "box-shadow": "0 4px 20px rgba(0, 0, 0, 0.15)",
+        "width": "100%",
+        "margin": "1px",
+        "border-radius": "15px",
+    },
+    "title":{
+            "font-family": " sans-serif",
+        },
+        "filter": {
+        "background-color": "grey",
+        },
+    "card:hover": {
+        "box-shadow": "0 6px 25px rgba(0, 0, 0, 0.25)",
+        "transform": "scale(1.03)"
+    },
+    "text": {
+        "font-family": "\"Roboto\", sans-serif",
+        "color": "#4a4a4a",
+        "font-size": "16px",
+        "line-height": "1.7"
+    }
+    }
