@@ -2,25 +2,14 @@ import streamlit as st
 from services.html_css import card_css, tag_line_css
 from services.models import Community
 from services.footer import display_footer
+from streamlit_card import card
 
-st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐" )
+st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐")
 st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
     divider=True,
 )
-st.markdown(
-    """
-    <style>
-    .description {
-        font-size: 20px;
-        color: white;
-        text-align: center;
-        margin-top: 50px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+
 
 st.markdown(
     """
@@ -32,64 +21,58 @@ st.markdown(
 )
 
 
+
 # Sample community data
 st.session_state.communities = [
     Community("Hobby Hub", "Explore and share your hobbies with others!", "🎨"),
     Community("Study & Life Hacks", "Boost your productivity with life hacks!", "📚"),
-    Community(
-        "Mental Health & Wellness",
-        "Find mindfulness practices and self-care tips.",
-        "🧘‍♀️",
-    ),
+    Community("Mental Health & Wellness", "Find mindfulness practices and self-care tips.", "🧘‍♀️"),
     Community("Meal Planner", "Generate meal plans based on your ingredients!", "🍽️"),
-    Community(
-        "Mindfulness & Meditation", "Learn mindfulness techniques to stay calm.", "🧘‍♂️"
-    ),
+    Community("Mindfulness & Meditation", "Learn mindfulness techniques to stay calm.", "🧘‍♂️"),
     Community("Finance for Beginners", "Start managing your finances smartly.", "💰"),
     Community("Beauty & Skincare", "Explore beauty tips and skincare routines.", "💅"),
-    Community(
-        "Event Finder", "Discover fun events and activities happening near you.", "🎉"
-    ),
-    Community(
-        "Fashion & Style", "Get personalized fashion advice based on your mood!", "👗"
-    ),
+    Community("Event Finder", "Discover fun events and activities happening near you.", "🎉"),
+    Community("Fashion & Style", "Get personalized fashion advice based on your mood!", "👗"),
 ]
 
-
+# Display community cards using streamlit-card
 def display_communities():
-    st.markdown(
-        tag_line_css,
-        unsafe_allow_html=True,
-    )
-
-    st.markdown(card_css, unsafe_allow_html=True)
-
+    st.markdown(tag_line_css, unsafe_allow_html=True)
+    
+    # Loop through communities in rows of 3
     for i in range(0, len(st.session_state.communities), 3):
         cols = st.columns(3)
         for j in range(3):
             if i + j < len(st.session_state.communities):
                 community = st.session_state.communities[i + j]
                 with cols[j]:
-                    button_id = f"card-button-{community.name.replace(' ', '-')}"
-                    card_html = f"""
-                    <button class='card-button' id='{button_id}' onclick="window.location.reload(true);">
-                        <h3>{community.emoji} {community.name}</h3>
-                        <p>{community.description}</p>
-                    </button>
-                    <script>
-                    document.getElementById('{button_id}').onclick = function() {{
-                        window.parent.postMessage({{"type": "setSessionState", "key": "page", "value": "{community.name}"}}, "*");
-                    }};
-                    </script>
-                    """
-                    st.markdown(card_html, unsafe_allow_html=True)
-
+                    if card(
+                        title=f"{community.emoji} {community.name}",
+                        text=community.description,
+                        # image="https://via.placeholder.com/300",
+                        key=community.name,
+                        styles={
+                        "card": {
+                            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
+                            "padding":'0px',
+                            "width":"100%",
+                            "margin":"3px",
+                            "border-radius": "10px",
+                            "background-color": "#f0f2f6",
+                        },
+                        "text": {
+                            "font-family": "Times New Roman",
+                        }
+                    }
+                    ):
+                        st.session_state.page = community.name
 
 display_communities()
 
+# Display content based on the selected community
 if "page" in st.session_state:
     st.write(f"### Welcome to the {st.session_state.page} page!")
     st.write("This is where you would add your community-specific content.")
 
-
 display_footer()
+
