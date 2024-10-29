@@ -1,8 +1,8 @@
-# commuVerse
+# CommuVerse
 
-### Welcome to commuVerse – Your Community of Communities!
+### Welcome to CommuVerse – Your Community of Communities!
 
-commuVerse is an interactive web app built using Streamlit that connects users to various communities where they can explore their interests, get personalized assistance from Generative AI LLMs, and engage in discussions with like-minded individuals. Whether you're into hobbies, mental wellness, study hacks, or personal finance, commuVerse is your go-to platform!
+CommuVerse is an interactive web app built using Streamlit that connects users to various communities where they can explore their interests, get personalized assistance from Generative AI LLMs, and engage in discussions with like-minded individuals. Whether you're into hobbies, mental wellness, study hacks, or personal finance, CommuVerse is your go-to platform!
 
 ---
 
@@ -44,13 +44,13 @@ commuVerse is an interactive web app built using Streamlit that connects users t
 
 ## Installation
 
-To run commuVerse locally, follow these steps:
+To run CommuVerse locally, follow these steps:
 
 1. Clone the repository:
 
    ```bash
    git@github.com:alsaif1431/CommuVerse.git
-   cd commuverse
+   cd CommuVerse
    ```
 
 2. Install Dependencies.
@@ -77,7 +77,7 @@ Once the app is running:
 
 ### Community Structure
 
-commuVerse consists of various communities, each designed to cater to a specific interest. These include:
+CommuVerse consists of various communities, each designed to cater to a specific interest. These include:
 
 1. Hobby Hub: Share your latest projects and hobbies.
 2. Study and Life Hacks: Boost your academic productivity with AI-driven tips.
@@ -91,7 +91,7 @@ commuVerse consists of various communities, each designed to cater to a specific
 
 ### Future Improvements
 
-We plan to continuously improve commuVerse with the following features:
+We plan to continuously improve CommuVerse with the following features:
 
 1. Real-time Chat Integration: Allow users to chat with each other and AI bots in real-time.
 2. Gamification: Introduce challenges, achievements, and leaderboards to increase engagement.
