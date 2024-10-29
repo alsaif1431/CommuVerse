@@ -17,8 +17,8 @@ def display_footer():
             <a href="https://www.linkedin.com/in/saif-pasha-59643b197/" target="_blank" style="margin-right: 15px;">
                 <img src="https://img.icons8.com/ios-filled/50/4a4a4a/linkedin.png" alt="LinkedIn" style="width:30px; height:30px;">
             </a>
-            <a href="mailto:yourmail@example.com" target="_blank">
-                <img src="https://img.icons8.com/ios-filled/50/4a4a4a/gmail.png" alt="Email" style="width:30px; height:30px;">
+            <a href="https://github.com/alsaif1431" target="_blank" >
+                <img src="https://img.icons8.com/ios-glyphs/30/4a4a4a/github.png" alt="GitHub" style="width:30px; height:30px;">
             </a>
             <p style="font-size: 14px; margin-top: 10px;">&copy; 2023 commuVerse. All rights reserved.</p>
         </div>

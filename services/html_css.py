@@ -70,6 +70,7 @@ styles={
         "width": "100%",
         "margin": "1px",
         "border-radius": "15px",
+        
     },
     "title":{
             "font-family": " sans-serif",
