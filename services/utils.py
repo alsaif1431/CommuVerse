@@ -17,6 +17,7 @@ page_name_mapping = {
 
 def go_to_home():
     page_to_navigate = page_name_mapping.get("Home")
-    Home = st.button("🏠 Home")
+    Home = st.button("🏠")
     if Home:
         switch_page(page_to_navigate)
+        
