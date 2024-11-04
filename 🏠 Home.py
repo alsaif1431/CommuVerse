@@ -6,7 +6,7 @@ from streamlit_card import card
 from streamlit_extras.switch_page_button import switch_page
 from services.utils import page_name_mapping
 
-st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐")
+st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐",initial_sidebar_state="collapsed")
 st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
     divider=True,
