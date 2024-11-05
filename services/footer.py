@@ -23,5 +23,5 @@ def display_footer():
             <p style="font-size: 14px; margin-top: 10px;">&copy; 2023 commuVerse. All rights reserved.</p>
         </div>
         """,
-        unsafe_allow_html=True,
+        unsafe_allow_html=True
     )
