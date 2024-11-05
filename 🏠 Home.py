@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from services.html_css import styles, tag_line_css
 from services.models import Community
@@ -37,16 +38,17 @@ communities = [
 st.sidebar.write("About us?.")
 
 communities = [
-    Community("🎨 Hobby Hub", "Explore and share your hobbies with others!", "Hobby Hub"),
-    Community("📚 Study & Life Hack", "Boost your productivity with life hacks!", "Study & Life Hack"),
-    Community("🧘‍♀️ Mental Health & Wellness", "Find mindfulness practices and self-care tips.", "Mental Health & Wellness"),
-    Community("🍽️ Meal Planner", "Generate meal plans based on your ingredients!", "Meal Planner"),
-    Community("🧘‍♂️ Mindfulness & Meditation", "Learn mindfulness techniques to stay calm.", "Mindfulness & Meditation"),
-    Community("💰 Finance for Beginners", "Start managing your finances smartly.", "Finance for Beginners"),
-    Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "Beauty & Skincare"),
-    Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "Event Finder"),
-    Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "Fashion & Style"),
+    Community("🎨 Hobby Hub", "Explore and share your hobbies with others!", "Hobby Hub", os.path.join("assets", "HobbyHub.jpg")),
+    # Community("📚 Study & Life Hack", "Boost your productivity with life hacks!", "Study & Life Hack", "https://example.com/study_life_hack.jpg"),
+    # Community("🧘‍♀️ Mental Health & Wellness", "Find mindfulness practices and self-care tips.", "Mental Health & Wellness", "https://example.com/mental_health_wellness.jpg"),
+    # Community("🍽️ Meal Planner", "Generate meal plans based on your ingredients!", "Meal Planner", "https://example.com/meal_planner.jpg"),
+    # Community("🧘‍♂️ Mindfulness & Meditation", "Learn mindfulness techniques to stay calm.", "Mindfulness & Meditation", "https://example.com/mindfulness_meditation.jpg"),
+    # Community("💰 Finance for Beginners", "Start managing your finances smartly.", "Finance for Beginners", "https://example.com/finance_for_beginners.jpg"),
+    # Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "Beauty & Skincare", "https://example.com/beauty_skincare.jpg"),
+    # Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "Event Finder", "https://example.com/event_finder.jpg"),
+    # Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "Fashion & Style", "https://example.com/fashion_style.jpg"),
 ]
+
 
 
 
@@ -60,9 +62,9 @@ def display_communities():
                 community = communities[i + j]
                 with cols[j]:
                     if card(
-                        title=f"{community.name}",
+                        title=community.name,
                         text=community.description,
-                        image="https://via.placeholder.com/300",  ## THIS HAS TO BE DYNAMIC
+                         image=None,  ## THIS HAS TO BE DYNAMIC
                         key=community.name,
                         styles=styles
                     ):
