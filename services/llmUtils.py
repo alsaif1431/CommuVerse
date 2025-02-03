@@ -1,11 +1,10 @@
 from langchain_openai import AzureChatOpenAI
 import os
-from langchain_community.chat_message_histories import StreamlitChatMessageHistory
+import streamlit as st
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import MessagesPlaceholder
 from langchain.agents import initialize_agent, AgentType
 from langchain_community.tools.tavily_search import TavilySearchResults
-
 
 def get_llm():
     return AzureChatOpenAI(
@@ -15,12 +14,10 @@ def get_llm():
         api_version=os.getenv('AZURE_OPENAI_API_VERSION')
     )
 
-
-def get_chat_memory(key="default_key"):
-    msgs = StreamlitChatMessageHistory(key=key)
-    return ConversationBufferMemory(chat_memory=msgs, return_messages=True)
-
-
+def get_chat_memory():
+    if "chat_memory" not in st.session_state:
+        st.session_state.chat_memory = ConversationBufferMemory(return_messages=True)
+    return st.session_state.chat_memory
 
 def create_agent(system_message, llm, memory):
     agent_kwargs = {
@@ -28,9 +25,9 @@ def create_agent(system_message, llm, memory):
         "extra_prompt_messages": [MessagesPlaceholder(variable_name="history")]
     }
     return initialize_agent(
-        tools=[TavilySearchResults(max_results=1)],  # Add tools as needed
+        tools=[TavilySearchResults(max_results=1)],  # Requires a valid Tavily API key
         llm=llm,
-        agent=AgentType.OPENAI_FUNCTIONS,
+        agent=AgentType.OPENAI_FUNCTIONS,  # Alternative to OPENAI_FUNCTIONS
         agent_kwargs=agent_kwargs,
         memory=memory
     )

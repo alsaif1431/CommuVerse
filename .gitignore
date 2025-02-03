@@ -3,3 +3,4 @@
 .env
 text.py
 second_try.py
+__pycache__

@@ -11,7 +11,8 @@ tag_line_css = """
         
 styles = {
     "card": {
-        "background-color": "white !important",
+        "background-color": "#ffffff !important",
+        "background": "#ffffff !important",
         "border-radius": "15px",
         "padding": "20px",
         "margin": "10px",
