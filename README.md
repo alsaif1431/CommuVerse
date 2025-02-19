@@ -2,7 +2,7 @@
 
 ### Welcome to commuVerse – Your Community of Communities!
 
-commuVerse is an interactive web app built using Streamlit that connects users to various communities where they can explore their interests, get personalized assistance from Generative AI LLMs, and engage in discussions with like-minded individuals. Whether you're into hobbies, mental wellness, study hacks, or personal finance, commuVerse is your go-to platform!
+commuVerse is an interactive web app built using Streamlit that connects users to various communities where they can explore their interests, get personalized assistance from Generative AI LLMs, and engage in discussions with like-minded individuals. Whether you're into hobbies, mental wellness, study hacks, or personal finance, commuVerse is your go-to platform! 
 
 ---
 
