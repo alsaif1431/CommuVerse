@@ -7,3 +7,6 @@ __pycache__
 ToDonotes.txt
 .vscode
 .streamlit
+buddy_chat.db
+buddy_chat.py
+chat_db.py
