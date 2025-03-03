@@ -6,7 +6,7 @@ page_name_mapping = {
     "Study & Life Hack": "Study & Life Hack",
     "Mental Health & Wellness": "Mental Health & Wellness",
     "Meal Planner": "Meal Planner",
-    "Stranger Buddy": "Stranger Buddy",
+    "Mindfulness & Meditation": "Mindfulness & Meditation",
     "Finance for Beginners": "Finance for Beginners",
     "Beauty & Skincare": "Beauty & Skincare",
     "Event Finder": "Event Finder",
