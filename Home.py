@@ -45,7 +45,7 @@ communities = [
     Community("🧘‍♂️ Mindfulness & Meditation", "Learn mindfulness techniques to stay calm.", "Mindfulness & Meditation", "https://www.mindful.org/content/uploads/Minsdulness2.jpg"),
     Community("💰 Finance for Beginners", "Start managing your finances smartly.", "Finance for Beginners", "https://www.shutterstock.com/image-vector/finance-text-creative-drawing-charts-260nw-321267758.jpg"),
     Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "Beauty & Skincare", "https://www.shutterstock.com/image-vector/skin-care-hand-drawn-lettering-260nw-1600297144.jpg"),
-    Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "Event Finder", "https://cdn.jaimelesstartups.fr/wp-content/uploads/2017/12/Logo%20de%20la%20startup%20Event%20Finder.png"),
+    Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "Event Finder", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZQXbwqYppE5-4KgHWLj6SioYP07o3xPmSQ&s"),
     Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "Fashion & Style", "https://www.shutterstock.com/image-vector/fashion-style-logo-260nw-378088279.jpg"),
 ]
 
