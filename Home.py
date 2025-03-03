@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from services.html_css import styles, tag_line_css
 from services.models import Community
@@ -6,7 +7,7 @@ from streamlit_card import card
 from streamlit_extras.switch_page_button import switch_page
 from services.utils import page_name_mapping
 
-st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐")
+st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐",initial_sidebar_state="collapsed")
 st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
     divider=True,
@@ -37,17 +38,16 @@ communities = [
 st.sidebar.write("About us?.")
 
 communities = [
-    Community("🎨 Hobby Hub", "Explore and share your hobbies with others!", "Hobby Hub"),
-    Community("📚 Study & Life Hack", "Boost your productivity with life hacks!", "Study & Life Hack"),
-    Community("🧘‍♀️ Mental Health & Wellness", "Find mindfulness practices and self-care tips.", "Mental Health & Wellness"),
-    Community("🍽️ Meal Planner", "Generate meal plans based on your ingredients!", "Meal Planner"),
-    Community("🧘‍♂️ Mindfulness & Meditation", "Learn mindfulness techniques to stay calm.", "Mindfulness & Meditation"),
-    Community("💰 Finance for Beginners", "Start managing your finances smartly.", "Finance for Beginners"),
-    Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "Beauty & Skincare"),
-    Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "Event Finder"),
-    Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "Fashion & Style"),
+    Community("🎨 Hobby Hub", "Explore and share your hobbies with others!", "Hobby Hub","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpPLjjA_zzqTrJwIRjAMuKvxN9PFB-rUwvVw&s"),
+    Community("📚 Study & Life Hack", "Boost your productivity with life hacks!", "Study & Life Hack", "https://media.istockphoto.com/id/895791500/photo/life-hacks-text-on-a-display-on-blue-and-pink-bright-background.jpg?s=612x612&w=0&k=20&c=lDzCbYlQEmVXrvKoosI8_WENsGyMXUrjq7ca074e7LI="),
+    Community("🧘‍♀️ Mental Health & Wellness", "Find mindfulness practices and self-care tips.", "Mental Health & Wellness", "https://3.files.edl.io/10ec/20/10/19/162749-95b87ddf-eae5-436c-a278-06f1bbba1019.jpg"),
+    Community("🍽️ Meal Planner", "Generate meal plans based on your ingredients!", "Meal Planner", "https://cdn.prod.website-files.com/602eb6861cd59a7ac7908779/64ef83859029c31799e2330b_Meal%20Plan.png"),
+    Community("🧘‍♂️ Mindfulness & Meditation", "Learn mindfulness techniques to stay calm.", "Mindfulness & Meditation", "https://www.mindful.org/content/uploads/Minsdulness2.jpg"),
+    Community("💰 Finance for Beginners", "Start managing your finances smartly.", "Finance for Beginners", "https://www.shutterstock.com/image-vector/finance-text-creative-drawing-charts-260nw-321267758.jpg"),
+    Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "Beauty & Skincare", "https://www.shutterstock.com/image-vector/skin-care-hand-drawn-lettering-260nw-1600297144.jpg"),
+    Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "Event Finder", "https://cdn.jaimelesstartups.fr/wp-content/uploads/2017/12/Logo%20de%20la%20startup%20Event%20Finder.png"),
+    Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "Fashion & Style", "https://www.shutterstock.com/image-vector/fashion-style-logo-260nw-378088279.jpg"),
 ]
-
 
 
 def display_communities():
@@ -60,11 +60,11 @@ def display_communities():
                 community = communities[i + j]
                 with cols[j]:
                     if card(
-                        title=f"{community.name}",
-                        text=community.description,
-                        image="https://via.placeholder.com/300",  ## THIS HAS TO BE DYNAMIC
+                        title='',
+                        text='',
                         key=community.name,
-                        styles=styles
+                        image=community.image_url,
+                        # styles=styles,
                     ):
                         page_to_navigate = page_name_mapping.get(community.page_name)
                         if page_to_navigate:

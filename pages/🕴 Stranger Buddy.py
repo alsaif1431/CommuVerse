@@ -1,52 +1,58 @@
 import streamlit as st
 import asyncio
 from services.utils import go_to_home
-from prompts.hobbyHub import hobbyHubPrompt
+from prompts.strangerFriend import strangerFriendPrompt  # Make sure this exists
 from services.llmUtils import get_chat_memory, get_llm, create_agent
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-st.set_page_config(page_title="Hobby Hub", layout="wide", page_icon="🎨")
+# Configure page for Stranger Friend
+st.set_page_config(page_title="Stranger Friend", layout="wide", page_icon="🤝")
 
-st.markdown("### 🎨 Hobby Hub: Where Passion Meets Connection!", unsafe_allow_html=True)
+st.markdown("### 🤝 Stranger Friend: Connect and Share Your Thoughts!", unsafe_allow_html=True)
 st.markdown(
     """
-        Whether you're a seasoned enthusiast or just starting out, the Hobby Hub is your space to explore, share, and connect with others who love what you love.
-""",
+        Welcome to Stranger Friend, a safe and welcoming space where you can share your thoughts, express yourself, 
+        and have meaningful conversations with someone new. Whether you're feeling low, need someone to talk to, or just want to connect, 
+        you're not alone here.
+    """,
     unsafe_allow_html=True,
 )
 
+# Optionally, you can add a "go to home" button if you have one
 go_to_home()
 
+# Initialize chat message history if not present
 if "messages" not in st.session_state:
     st.session_state.messages = []
     st.session_state.messages.append(
         {
             "role": "assistant",
             "avatar": "🤖",
-            "content": "Hello there! I'm your Hobby Companion. What's on your mind today?",
+            "content": "Hello there! I'm your Stranger Friend. What would you like to talk about today?",
         }
     )
 
+# Get LLM and conversation memory
 llm = get_llm()
 memory = get_chat_memory()
-open_ai_agent = create_agent(hobbyHubPrompt, llm, memory)
+open_ai_agent = create_agent(strangerFriendPrompt, llm, memory)
 
+# Display existing chat history
 for msg in st.session_state.messages:
     st.chat_message(msg["role"], avatar=msg["avatar"]).write(msg["content"])
 
-if user_input := st.chat_input("Ask me about any hobby or share your thoughts!"):
+# Get user input via chat input box
+if user_input := st.chat_input("Share your thoughts or ask me anything!"):
     st.chat_message("user", avatar="🎃").write(user_input)
-
     st.session_state.messages.append(
         {"role": "user", "avatar": "🎃", "content": user_input}
     )
 
     async def generate_response(prompt):
-        return open_ai_agent.run(
-            {"input": prompt, "history": memory.chat_memory.messages}
-        )
+        # Pass both user input and conversation history to the agent
+        return open_ai_agent.run({"input": prompt, "history": memory.chat_memory.messages})
 
     with st.spinner("Thinking..."):
         loop = asyncio.new_event_loop()
