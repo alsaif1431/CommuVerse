@@ -44,9 +44,9 @@ if user_input := st.chat_input("Ask me about any hobby or share your thoughts!")
     )
 
     async def generate_response(prompt):
-        return open_ai_agent.run(
-            {"input": prompt, "history": memory.chat_memory.messages}
-        )
+        # Pass both user input and conversation history to the agent
+        response = open_ai_agent.invoke({"input": prompt, "history": memory.chat_memory.messages})
+        return response['output']
 
     with st.spinner("Thinking..."):
         loop = asyncio.new_event_loop()

@@ -12,10 +12,10 @@ load_dotenv(override=True)
 
 def get_llm():
     return AzureChatOpenAI(
-        azure_endpoint=os.getenv('AZURE_OPENAI_ENDPOINT'),
-        azure_deployment=os.getenv('AZURE_OPENAI_DEPLOYMENT_NAME'),
-        api_key=os.getenv('AZURE_OPENAI_API_KEY'),
-        api_version=os.getenv('AZURE_OPENAI_API_VERSION')
+        azure_endpoint=st.secrets.get("AZURE_OPENAI_ENDPOINT"),
+        azure_deployment=st.secrets.get("AZURE_OPENAI_DEPLOYMENT_NAME"),
+        api_key=st.secrets.get("AZURE_OPENAI_API_KEY"),
+        api_version=st.secrets.get("AZURE_OPENAI_API_VERSION"),
     )
     # return ChatAnthropic(model='claude-3-opus-20240229')
 
