@@ -42,7 +42,7 @@ commuVerse is an interactive web app built using Streamlit that connects users t
 
 ---
 
-## Installation
+## Installation 
 
 To run CommuVerse locally, follow these steps:
 
