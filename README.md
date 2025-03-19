@@ -6,7 +6,7 @@ commuVerse is an interactive web app built using Streamlit that connects users t
 
 ---
 
-## Table of Contents
+## Table of Contents 
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
