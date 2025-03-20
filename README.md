@@ -1,4 +1,4 @@
-# CommuVerse
+# CommuVerse 
 
 ### Welcome to CommuVerse – Your Community of Communities!
 
