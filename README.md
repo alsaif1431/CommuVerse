@@ -28,7 +28,7 @@ commuVerse is an interactive web app built using Streamlit that connects users t
 - **Finance for Beginners**: Access personal finance tips, budgeting tools, and more.
 - **Quick Beauty and Skincare**: Explore beauty tips, skincare routines, and personalized product suggestions.
 - **Event Finder for Youth**: Discover events, workshops, and activities for youth.
-- **Fashion and Style Based on Mood**: Get AI-generated style recommendations based on your mood.
+- **Fashion and Style Based on Mood**: Get AI-generated style recommendations based on your mood. 
 
 ---
 
