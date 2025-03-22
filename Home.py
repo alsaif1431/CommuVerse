@@ -10,7 +10,7 @@ from services.utils import page_name_mapping
 st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐",initial_sidebar_state="collapsed")
 st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
-    divider=True,
+    divider=True, 
 )
 
 st.markdown(
