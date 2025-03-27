@@ -12,7 +12,7 @@ st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
     divider=True, 
 )
-
+ 
 st.markdown(
     """
 ### What is CommuVerse? 🌐
