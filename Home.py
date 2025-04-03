@@ -1,5 +1,5 @@
-import os
-import streamlit as st
+import os 
+import streamlit as st 
 from services.html_css import styles, tag_line_css
 from services.models import Community
 from services.footer import display_footer
@@ -10,9 +10,9 @@ from services.utils import page_name_mapping
 st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐",initial_sidebar_state="collapsed")
 st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
-    divider=True,
+    divider=True, 
 )
-
+ 
 st.markdown(
     """
 ### What is CommuVerse? 🌐

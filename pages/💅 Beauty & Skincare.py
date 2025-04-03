@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.write("Im in Beauty and Skincare")
+st.write("Im in Beauty and Skincare") 
