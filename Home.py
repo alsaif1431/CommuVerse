@@ -32,7 +32,7 @@ communities = [
     Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "beauty_skincare"),
     Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "event_finder"),
     Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "fashion_style"),
-]
+] 
 
 
 st.sidebar.write("About us?.")
