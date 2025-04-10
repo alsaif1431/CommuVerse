@@ -4,7 +4,7 @@ from services.html_css import styles, tag_line_css
 from services.models import Community
 from services.footer import display_footer 
 from streamlit_card import card
-from streamlit_extras.switch_page_button import switch_page
+from streamlit_extras.switch_page_button import switch_page 
 from services.utils import page_name_mapping
 
 st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐",initial_sidebar_state="collapsed")
