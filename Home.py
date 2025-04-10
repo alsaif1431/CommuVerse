@@ -63,7 +63,7 @@ def display_communities():
                         title='',
                         text='',
                         key=community.name,
-                        image=community.image_url,
+                        image=community.image_url, 
                         # styles=styles,
                     ):
                         page_to_navigate = page_name_mapping.get(community.page_name)
