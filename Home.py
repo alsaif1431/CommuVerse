@@ -1,4 +1,4 @@
-import os 
+import os
 import streamlit as st 
 from services.html_css import styles, tag_line_css
 from services.models import Community
