@@ -2,7 +2,7 @@ import os
 import streamlit as st
 from services.html_css import styles, tag_line_css 
 from services.models import Community 
-from services.footer import display_footer 
+from services.footer import display_footer  
 from streamlit_card import card
 from streamlit_extras.switch_page_button import switch_page
 from services.utils import page_name_mapping
