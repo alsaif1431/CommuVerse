@@ -1,6 +1,6 @@
 import os 
 import streamlit as st
-from services.html_css import styles, tag_line_css
+from services.html_css import styles, tag_line_css 
 from services.models import Community
 from services.footer import display_footer 
 from streamlit_card import card
