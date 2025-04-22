@@ -1,4 +1,4 @@
-from langchain.schema import SystemMessage 
+from langchain.schema import SystemMessage  
 
 hobbyHubPrompt = SystemMessage(
     content="""
