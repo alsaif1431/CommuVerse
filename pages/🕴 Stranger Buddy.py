@@ -10,7 +10,9 @@ load_dotenv(override=True)
 # Configure page for Stranger Friend
 st.set_page_config(page_title="Stranger Friend", layout="wide", page_icon="🤝")
 
-st.markdown("### 🤝 Stranger Friend: Connect and Share Your Thoughts!", unsafe_allow_html=True)
+st.markdown(
+    "### 🤝 Stranger Friend: Connect and Share Your Thoughts!", unsafe_allow_html=True
+)
 st.markdown(
     """
         Welcome to Stranger Friend, a safe and welcoming space where you can share your thoughts, express yourself, 
@@ -23,10 +25,10 @@ st.markdown(
 # Optionally, you can add a "go to home" button if you have one
 go_to_home()
 
-# Initialize chat message history if not present
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-    st.session_state.messages.append(
+key = "messages_stranger_buddy"
+if key not in st.session_state:
+    st.session_state[key] = []
+    st.session_state[key].append(
         {
             "role": "assistant",
             "avatar": "🤖",
@@ -40,26 +42,28 @@ memory = get_chat_memory()
 open_ai_agent = create_agent(strangerFriendPrompt, llm, memory)
 
 # Display existing chat history
-for msg in st.session_state.messages:
+for msg in st.session_state[key]:
     st.chat_message(msg["role"], avatar=msg["avatar"]).write(msg["content"])
 
 # Get user input via chat input box
 if user_input := st.chat_input("Share your thoughts or ask me anything!"):
     st.chat_message("user", avatar="🎃").write(user_input)
-    st.session_state.messages.append(
+    st.session_state[key].append(
         {"role": "user", "avatar": "🎃", "content": user_input}
     )
 
     async def generate_response(prompt):
         # Pass both user input and conversation history to the agent
-        response = open_ai_agent.invoke({"input": prompt, "history": memory.chat_memory.messages})
-        return response['output']
+        response = open_ai_agent.invoke(
+            {"input": prompt, "history": memory.chat_memory.messages}
+        )
+        return response["output"]
 
     with st.spinner("Thinking..."):
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         response = loop.run_until_complete(generate_response(user_input))
-        st.session_state.messages.append(
+        st.session_state[key].append(
             {"role": "assistant", "avatar": "🤖", "content": response}
         )
         st.chat_message("assistant", avatar="🤖").write(response)
