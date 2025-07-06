@@ -6,3 +6,4 @@ litellm==1.51.1
 langchain-community==0.3.3
 langchain-openai==0.2.4
 langchain-anthropic==0.3.7
+requests==2.32.2
