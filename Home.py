@@ -2,17 +2,22 @@ import os
 import streamlit as st
 from services.html_css import styles, tag_line_css
 from services.models import Community
-from services.footer import display_footer  
+from services.footer import display_footer
 from streamlit_card import card
 from streamlit_extras.switch_page_button import switch_page
 from services.utils import page_name_mapping
 
-st.set_page_config(page_title="CommuVerse", layout="wide", page_icon="🌐",initial_sidebar_state="collapsed")
+st.set_page_config(
+    page_title="CommuVerse",
+    layout="wide",
+    page_icon="🌐",
+    initial_sidebar_state="collapsed",
+)
 st.header(
     "🌐 Welcome to the CommuVerse: A Global Community of Communities!",
-    divider=True, 
+    divider=True,
 )
- 
+
 st.markdown(
     """
 ### What is CommuVerse? 🌐
@@ -23,52 +28,136 @@ st.markdown(
 )
 
 communities = [
-    Community("🎨 Hobby Hub", "Explore and share your hobbies with others!", "hobby_hub"),
-    Community("📚 Study & Life Hack", "Boost your productivity with life hacks!", "study_life_hacks"),
-    Community("🧘‍♀️ Mental Health & Wellness", "Find mindfulness practices and self-care tips.", "mental_health_wellness"),
-    Community("🍽️ Meal Planner", "Generate meal plans based on your ingredients!", "meal_planner"),
-    Community("🕴 Stranger Buddy", "Learn mindfulness techniques to stay calm.", "stranger_buddy"),
-    Community("💰 Finance for Beginners", "Start managing your finances smartly.", "finance_for_beginners"),
-    Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "beauty_skincare"),
-    Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "event_finder"),
-    Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "fashion_style"),
-] 
+    Community(
+        "🎨 Hobby Hub",
+        "Explore and share your hobbies with others!",
+        "Hobby Hub",
+        "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "📚 Study & Life Hack",
+        "Boost your productivity with life hacks!",
+        "Study & Life Hack",
+        "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "🧘‍♀️ Mental Health & Wellness",
+        "Find mindfulness practices and self-care tips.",
+        "Mental Health & Wellness",
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "🍽️ Meal Planner",
+        "Generate meal plans based on your ingredients!",
+        "Meal Planner",
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "🕴 Stranger Buddy",
+        "Learn mindfulness techniques to stay calm.",
+        "Stranger Buddy",
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "💰 Finance for Beginners",
+        "Start managing your finances smartly.",
+        "Finance for Beginners",
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "💅 Beauty & Skincare",
+        "Explore beauty tips and skincare routines.",
+        "Beauty & Skincare",
+        "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "🎉 Event Finder",
+        "Discover fun events and activities happening near you.",
+        "Event Finder",
+        "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+    ),
+    Community(
+        "👗 Fashion & Style",
+        "Get personalized fashion advice based on your mood!",
+        "Fashion & Style",
+        "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80",
+    ),
+]
 
 
 st.sidebar.write("About us?.")
 
-communities = [
-    Community("🎨 Hobby Hub", "Explore and share your hobbies with others!", "Hobby Hub","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpPLjjA_zzqTrJwIRjAMuKvxN9PFB-rUwvVw&s"),
-    Community("📚 Study & Life Hack", "Boost your productivity with life hacks!", "Study & Life Hack", "https://media.istockphoto.com/id/895791500/photo/life-hacks-text-on-a-display-on-blue-and-pink-bright-background.jpg?s=612x612&w=0&k=20&c=lDzCbYlQEmVXrvKoosI8_WENsGyMXUrjq7ca074e7LI="),
-    Community("🧘‍♀️ Mental Health & Wellness", "Find mindfulness practices and self-care tips.", "Mental Health & Wellness", "https://3.files.edl.io/10ec/20/10/19/162749-95b87ddf-eae5-436c-a278-06f1bbba1019.jpg"),
-    Community("🍽️ Meal Planner", "Generate meal plans based on your ingredients!", "Meal Planner", "https://cdn.prod.website-files.com/602eb6861cd59a7ac7908779/64ef83859029c31799e2330b_Meal%20Plan.png"),
-    Community("🕴 Stranger Buddy", "Learn mindfulness techniques to stay calm.", "Stranger Buddy", "https://i.pinimg.com/736x/2a/c0/8d/2ac08dcb7e4db5f6cb11a85678f250e4.jpg"),
-    Community("💰 Finance for Beginners", "Start managing your finances smartly.", "Finance for Beginners", "https://www.shutterstock.com/image-vector/finance-text-creative-drawing-charts-260nw-321267758.jpg"),
-    Community("💅 Beauty & Skincare", "Explore beauty tips and skincare routines.", "Beauty & Skincare", "https://www.shutterstock.com/image-vector/skin-care-hand-drawn-lettering-260nw-1600297144.jpg"),
-    Community("🎉 Event Finder", "Discover fun events and activities happening near you.", "Event Finder", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMZQXbwqYppE5-4KgHWLj6SioYP07o3xPmSQ&s"),
-    Community("👗 Fashion & Style", "Get personalized fashion advice based on your mood!", "Fashion & Style", "https://www.shutterstock.com/image-vector/fashion-style-logo-260nw-378088279.jpg"),
-]
-
 
 def display_communities():
     st.markdown(tag_line_css, unsafe_allow_html=True)
-    
+    card_style = """
+        <style>
+        .commuverse-card {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            border-radius: 18px;
+            overflow: hidden;
+            background: #fff;
+            transition: box-shadow 0.2s, transform 0.2s;
+            margin-bottom: 24px;
+            cursor: pointer;
+            position: relative;
+        }
+        .commuverse-card:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .commuverse-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(1.18) contrast(1.15) saturate(1.12);
+            border: 2px solid #f3f3f3;
+            background: #fff;
+        }
+        .commuverse-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 12px 0 0 0;
+            text-align: center;
+            color: #222;
+        }
+        .commuverse-card-desc {
+            font-size: 0.97rem;
+            color: #555;
+            text-align: center;
+            margin: 8px 0 16px 0;
+        }
+        </style>
+    """
+    st.markdown(card_style, unsafe_allow_html=True)
+
     for i in range(0, len(communities), 3):
         cols = st.columns(3)
         for j in range(3):
             if i + j < len(communities):
                 community = communities[i + j]
                 with cols[j]:
-                    if card(
-                        title='',
-                        text='',
-                        key=community.name,
-                        image=community.image_url, 
-                        # styles=styles,
-                    ):
-                        page_to_navigate = page_name_mapping.get(community.page_name)
-                        if page_to_navigate:
+                    card_html = f"""
+                    <div class="commuverse-card">
+                        <img src="{community.image_url}" class="commuverse-card-img" alt="{community.name}" />
+                        <div class="commuverse-card-title">{community.name}</div>
+                        <div class="commuverse-card-desc">{community.description}</div>
+                    </div>
+                    """
+                    st.markdown(card_html, unsafe_allow_html=True)
+                    page_to_navigate = page_name_mapping.get(community.page_name)
+                    if page_to_navigate:
+                        st.markdown(
+                            '<div style="display: flex; justify-content: center; margin-bottom: 16px;">',
+                            unsafe_allow_html=True,
+                        )
+                        if st.button(
+                            f"Go to {community.name}", key=f"btn_{community.name}_{i+j}"
+                        ):
                             switch_page(page_to_navigate)
+                        st.markdown("</div>", unsafe_allow_html=True)
+
 
 display_communities()
 display_footer()
